@@ -3,7 +3,7 @@ version:             0.1.0.0
 synopsis:            Initial project template from stack
 description:         Please see README.md
 homepage:            http://github.com/jsteiner/sendgrid#readme
-license:             BSD3
+license:             MIT
 license-file:        LICENSE
 author:              Josh Steiner
 maintainer:          josh@jsteiner.me
@@ -15,8 +15,11 @@ cabal-version:       >=1.10
 
 library
   hs-source-dirs:      src
-  exposed-modules:     Lib
-  build-depends:       base >= 4.7 && < 5
+  exposed-modules:     Network.Mail.SendGrid
+  build-depends:       base      >= 4.7 && < 5
+                     , mime-mail
+                     , network
+                     , smtp-mail >= 0.1.4.5 && < 0.2
   default-language:    Haskell2010
 
 source-repository head
